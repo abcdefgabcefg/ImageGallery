@@ -8,17 +8,22 @@ using ImageGallery.Models;
 
 namespace ImageGallery.DAL
 {
-    public class ImageGalleryContexInitializer : DropCreateDatabaseAlways<ImageGalleryContext>
+    public class ImageGalleryContexInitializer : DropCreateDatabaseIfModelChanges<ImageGalleryContext>
     {
         protected override void Seed(ImageGalleryContext context)
         {
-            string base64 = GetImage(HttpContext.Current.Server.MapPath(@"~/ImagesForGallery/agriculture-asia-china-235648.jpg"));
-            if (base64 != null)
+            var images = new List<Image>();
+            foreach (var file in Directory.EnumerateFiles(HttpContext.Current.Server.MapPath(@"~/ImagesForGallery")))
             {
-                Image image = new Image { ImageBase64 = base64};
-                context.Images.Add(image);
-                context.SaveChanges();
+                string base64 = GetImage(file);
+                if (base64 != null)
+                {
+                    Image image = new Image { ImageBase64 = base64 };
+                    images.Add(image);
+                } 
             }
+            context.Images.AddRange(images);
+            context.SaveChanges();
         }
 
         private string GetImage(string path)

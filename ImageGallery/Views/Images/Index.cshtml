@@ -1,15 +1,29 @@
 ﻿@model IEnumerable<ImageGallery.Models.Image>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Images";
 }
 
-<h2>Index</h2>
+<h2>Images</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-@foreach (var item in Model) { 
-    <img src="@item.ImageBase64" class="image"/>
+@{ 
+    int middle = Model.Count() / 2 + 1;
+    var images = Model as List<ImageGallery.Models.Image>;
 }
+<div class="image-wrapper">
+    @for (int index = 0; index < middle; index++)
+    {
+    <div>
+        <img src="@images[index].ImageBase64" class="image" />
+    </div>
+    }
+</div>
+<div class="image-wrapper">
+    @for (int index = middle; index < Model.Count(); index++)
+    {
+    <div>
+        <img src="@images[index].ImageBase64" class="image" />
+    </div>
+    }
+</div>
+
