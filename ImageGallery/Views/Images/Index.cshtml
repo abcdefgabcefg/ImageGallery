@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ImageGallery.Models.Image>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@foreach (var item in Model) { 
+    <img src="@item.ImageBase64" class="image"/>
+}
