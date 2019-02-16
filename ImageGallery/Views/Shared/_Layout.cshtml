@@ -1,38 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Image Gallery</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <style>
-        body{
-            font-family: Montserrat, sans-serif;
-            padding-bottom: 0;
-        }
-        .image-wrapper{
-            float: left;
-            width: 50%;
-        }
-        .image-wrapper div{
-            box-sizing: border-box;
-            padding: 20px 40px 20px 0;
-        }
-            .image-wrapper div img {
-                width: 100%;
-                box-shadow: 5px 5px;
-            }
-        footer {
-            color: #9d9d9d;
-            background-color: #222;
-            padding: 60px 0 50px 185px;
-        }
-        footer p{
-            margin-bottom: 0;
-        }
-    </style>
+    @Styles.Render("~/MyStyles")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

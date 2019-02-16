@@ -21,6 +21,11 @@ namespace ImageGallery.Controllers
             return View(db.Images.ToList());
         }
 
+        public ActionResult Slider()
+        {
+            return View(db.Images.ToList());
+        }
+
         // GET: Images/Details/5
         public ActionResult Details(int? id)
         {

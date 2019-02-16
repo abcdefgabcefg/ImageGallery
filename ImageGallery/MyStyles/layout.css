@@ -1,0 +1,13 @@
+﻿body {
+    font-family: Montserrat, sans-serif;
+    padding-bottom: 0;
+}
+footer {
+    color: #9d9d9d;
+    background-color: #222;
+    padding: 60px 0 50px 185px;
+}
+
+    footer p {
+        margin-bottom: 0;
+    }

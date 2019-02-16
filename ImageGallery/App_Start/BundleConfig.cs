@@ -22,9 +22,16 @@ namespace ImageGallery
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/MyScripts/Slider").Include(
+                      "~/MyScripts/Slider.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/MyStyles").Include(
+                "~/MyStyles/Layout.css",
+                "~/MyStyles/Index.css",
+                "~/MyStyles/Slider.css"));
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿.image-wrapper {
+    float: left;
+    width: 50%;
+}
+
+    .image-wrapper div {
+        box-sizing: border-box;
+        padding: 20px 40px 20px 0;
+    }
+
+        .image-wrapper div img {
+            width: 100%;
+            box-shadow: 5px 5px;
+        }
