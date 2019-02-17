@@ -15,7 +15,7 @@
         {
             <div class="mySlides fade">
                 <div class="numbertext">@counter / @count</div>
-                <img src="@item.ImageBase64" style="width:100%; height:600px">
+                <img src="@Url.Action("GetImage", new { id = item.ID })" style="width:100%; height:600px">
             </div>
             counter++;
         }
@@ -25,6 +25,6 @@
 
 </div>
 
-@Scripts.Render("~/MyScripts/Slider");
+@Scripts.Render("~/MyScripts/Slider")
 
 

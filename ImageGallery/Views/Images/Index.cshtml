@@ -6,24 +6,29 @@
 
 <h2>Images</h2>
 
-@{ 
-    int middle = Model.Count() / 2 + 1;
+@{
+    int middle = Model.Count() / 2;
+    if (middle % 2 == 0)
+    {
+        middle++;
+    }
     var images = Model as List<ImageGallery.Models.Image>;
 }
 <div class="image-wrapper">
     @for (int index = 0; index < middle; index++)
     {
-    <div>
-        <img src="@images[index].ImageBase64" class="image" />
-    </div>
+        <div>
+            <img src="@Url.Action("GetImage", new { id = images[index].ID })" class="image" />
+        </div>
     }
 </div>
 <div class="image-wrapper">
     @for (int index = middle; index < Model.Count(); index++)
     {
-    <div>
-        <img src="@images[index].ImageBase64" class="image" />
-    </div>
+        <div>
+            <img src="@Url.Action("GetImage", new { id = images[index].ID })" class="image" />
+        </div>
     }
 </div>
+
 

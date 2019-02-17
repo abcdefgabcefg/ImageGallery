@@ -26,6 +26,11 @@ namespace ImageGallery.Controllers
             return View(db.Images.ToList());
         }
 
+        public ActionResult GetImage(int id)
+        {
+            return File(db.Images.Find(id).ImageBytes, "image/jpeg");
+        }
+
         // GET: Images/Details/5
         public ActionResult Details(int? id)
         {

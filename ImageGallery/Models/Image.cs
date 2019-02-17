@@ -10,6 +10,6 @@ namespace ImageGallery.Models
     {
         public int ID { get; set; }
         [Required]
-        public string ImageBase64 { get; set; }
+        public byte[] ImageBytes { get; set; }
     }
 }

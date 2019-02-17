@@ -15,10 +15,10 @@ namespace ImageGallery.DAL
             var images = new List<Image>();
             foreach (var file in Directory.EnumerateFiles(HttpContext.Current.Server.MapPath(@"~/ImagesForGallery")))
             {
-                string base64 = GetImage(file);
+                byte[] base64 = GetImage(file);
                 if (base64 != null)
                 {
-                    Image image = new Image { ImageBase64 = base64 };
+                    Image image = new Image { ImageBytes = base64 };
                     images.Add(image);
                 } 
             }
@@ -26,13 +26,11 @@ namespace ImageGallery.DAL
             context.SaveChanges();
         }
 
-        private string GetImage(string path)
+        private byte[] GetImage(string path)
         {
             if (File.Exists(path))
             {
-                byte[] bytes = File.ReadAllBytes(path);
-                string base64 = Convert.ToBase64String(bytes);
-                return string.Format("data:image/jpg;base64,{0}", base64);
+                 return File.ReadAllBytes(path);
             }
             return null;
         }

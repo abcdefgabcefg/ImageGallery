@@ -171,7 +171,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ImagesForGallery\agriculture-asia-china-235648.jpg" />
     <Content Include="MyScripts\Slider.js" />
     <Content Include="MyStyles\Index.css" />
     <Content Include="MyStyles\layout.css" />
@@ -212,7 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Converting\" />
+    <Folder Include="ImagesForGallery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
